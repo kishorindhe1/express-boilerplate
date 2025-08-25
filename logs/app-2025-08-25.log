@@ -4,3 +4,70 @@
     at Generator.throw (<anonymous>)
     at rejected (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:6:65)
 [2025-08-25 16:07:37] INFO: POST /api/v1.0/auth/register | Status: 409 | 152ms
+[2025-08-25 17:18:14] ERROR: Error: Duplicate value for field(s): User_email_key | Status: 409 | Stack: Error: Duplicate value for field(s): User_email_key
+    at handlePrismaError (/Users/kishor/Desktop/boilerplate/src/middleware/PrismaError.ts:9:16)
+    at Object.<anonymous> (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:22:30)
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:6:65)
+[2025-08-25 17:18:14] INFO: POST /api/v1.0/auth/register | Status: 409 | 91ms
+[2025-08-25 17:18:16] ERROR: Error: Duplicate value for field(s): User_email_key | Status: 409 | Stack: Error: Duplicate value for field(s): User_email_key
+    at handlePrismaError (/Users/kishor/Desktop/boilerplate/src/middleware/PrismaError.ts:9:16)
+    at Object.<anonymous> (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:22:30)
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:6:65)
+[2025-08-25 17:18:16] INFO: POST /api/v1.0/auth/register | Status: 409 | 81ms
+[2025-08-25 17:18:21] ERROR: Error: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Required"
+  }
+] | Status: 400 | Stack: ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Required"
+  }
+]
+    at Object.get error [as error] (/Users/kishor/Desktop/boilerplate/node_modules/zod/v3/types.cjs:45:31)
+    at ZodObject.parse (/Users/kishor/Desktop/boilerplate/node_modules/zod/v3/types.cjs:120:22)
+    at /Users/kishor/Desktop/boilerplate/src/middleware/validateResourse.ts:7:14
+    at Layer.handle [as handle_request] (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:280:10)
+[2025-08-25 17:18:21] INFO: POST /api/v1.0/auth/register | Status: 400 | 4ms
+[2025-08-25 17:18:28] INFO: POST /api/v1.0/auth/sign-in | Status: 200 | 16ms
+[2025-08-25 17:26:04] ERROR: Error: Resource not found | Status: 404 | Stack: Error: Resource not found
+    at notFoundHandler (/Users/kishor/Desktop/boilerplate/src/middleware/notFoundHandler.ts:6:8)
+    at Layer.handle [as handle_request] (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:328:13)
+    at /Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:346:12)
+    at Immediate.next (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:280:10)
+    at Immediate._onImmediate (/Users/kishor/Desktop/boilerplate/node_modules/express/lib/router/index.js:646:15)
+    at processImmediate (node:internal/timers:507:21)
+[2025-08-25 17:26:04] INFO: POST /api/v1.0/auth/profile | Status: 404 | 5ms
+[2025-08-25 17:26:13] INFO: GET /api/v1.0/auth/profile | Status: 401 | 1ms
+[2025-08-25 17:29:13] INFO: POST /api/v1.0/auth/sign-in | Status: 200 | 19ms
+[2025-08-25 17:29:19] INFO: GET /api/v1.0/auth/profile | Status: 401 | 1ms
+[2025-08-25 17:29:37] INFO: GET /api/v1.0/auth/profile | Status: 200 | 2ms
+[2025-08-25 17:30:00] INFO: GET /api/v1.0/auth/profile | Status: 200 | 1ms
+[2025-08-25 17:30:02] INFO: GET /api/v1.0/auth/profile | Status: 200 | 1ms
+[2025-08-25 17:31:02] INFO: GET /api/v1.0/auth/profile | Status: 200 | 1ms
+[2025-08-25 17:31:03] INFO: GET /api/v1.0/auth/profile | Status: 200 | 1ms
+[2025-08-25 17:31:03] INFO: GET /api/v1.0/auth/profile | Status: 200 | 1ms
+[2025-08-25 17:31:05] INFO: GET /api/v1.0/auth/profile | Status: 200 | 2ms

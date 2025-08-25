@@ -1,3 +1,4 @@
+import { generateTokens } from '../../../middleware/jwtMiddleware';
 import { comparePassword, hashPassword } from '../../../utils';
 import { userRepository } from './auth.db';
 
@@ -40,11 +41,11 @@ const signIn = async (info: UserInfo) => {
     if (!comparePassword(password, result.password)) {
       throw new Error('Invalid credentials');
     }
-
+    const token = generateTokens({ userId: result.id, email: result.email });
     // strip password before returning
     const { password: _, ...safeUser } = result;
 
-    return safeUser;
+    return { ...safeUser, ...token };
   } catch (error) {
     throw error;
   }
