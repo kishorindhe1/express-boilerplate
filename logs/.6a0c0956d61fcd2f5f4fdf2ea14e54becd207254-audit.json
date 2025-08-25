@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/kishor/Desktop/boilerplate/logs/.6a0c0956d61fcd2f5f4fdf2ea14e54becd207254-audit.json",
+    "files": [
+        {
+            "date": 1755868621332,
+            "name": "/Users/kishor/Desktop/boilerplate/logs/app-2025-08-22.log",
+            "hash": "3603820ca9292721be93a7278835a79ecb6e408bc1d5145623a62bde6429ac7f"
+        },
+        {
+            "date": 1756115153783,
+            "name": "/Users/kishor/Desktop/boilerplate/logs/app-2025-08-25.log",
+            "hash": "0eb10bbddc178de130859571a16d6e2017117ac0bbc147e3e1a9fd334c36561e"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,6 @@
+[2025-08-25 16:07:37] ERROR: Error: Duplicate value for field(s): User_email_key | Status: 409 | Stack: Error: Duplicate value for field(s): User_email_key
+    at handlePrismaError (/Users/kishor/Desktop/boilerplate/src/middleware/PrismaError.ts:9:16)
+    at Object.<anonymous> (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:22:30)
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/Desktop/boilerplate/src/api/v1.0/auth/auth.db.ts:6:65)
+[2025-08-25 16:07:37] INFO: POST /api/v1.0/auth/register | Status: 409 | 152ms
