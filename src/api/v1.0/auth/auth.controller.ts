@@ -1,6 +1,6 @@
+import { sendResponse } from '@/utils';
 import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { sendResponse } from '../../../utils';
 import { authService } from './auth.service';
 
 const addUser = async (req: Request, res: Response, next: NextFunction) => {

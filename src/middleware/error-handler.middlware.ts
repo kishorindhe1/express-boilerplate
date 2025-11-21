@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { ZodError } from 'zod';
 import { logger, sendResponse } from '../utils';
-import ApiError from './ApiError';
+import ApiError from './api-error.middleware';
 
 const errorHandler = (
   err: Error | ApiError | ZodError,
