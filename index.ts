@@ -1,15 +1,13 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import apiRoutes from './src/api/index'; // Adjust the path as necessary
-import { ENV } from './src/config/env'; // Adjust the path as necessary
-import { errorHandler, notFoundHandler, requestLogger } from './src/middleware'; // Adjust the path as necessary
+import apiRoutes from './src/api/index';
+import { ENV } from './src/config';
+import { errorHandler, notFoundHandler, requestLogger } from './src/middleware';
 import { setupSwagger } from './swagger';
-// Initialize Express app
 const app = express();
 
-// Middleware
-app.use(helmet()); // Security headers
+app.use(helmet());
 app.use(express.json());
 
 // Rate limiting configuration
