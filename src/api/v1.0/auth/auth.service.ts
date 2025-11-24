@@ -1,6 +1,7 @@
 import { generateTokens } from '@/middleware/jwt.middlware';
 import { comparePassword, hashPassword } from '../../../utils';
-import { userRepository } from './auth.db';
+import { userRepository } from './auth.repository';
+import { IUserInfo } from './auth.types';
 
 /**
  * Adds a new user to the database.
@@ -8,13 +9,7 @@ import { userRepository } from './auth.db';
  * @returns The result of the user creation operation.
  */
 
-export interface UserInfo {
-  name?: string;
-  email: string;
-  password: string;
-}
-
-const addUser = async (info: UserInfo) => {
+const addUser = async (info: IUserInfo) => {
   const { name = '', email, password } = info;
   const encryptPassword = await hashPassword(password);
   const result = await userRepository.addUser(name, email, encryptPassword);
@@ -26,7 +21,7 @@ const addUser = async (info: UserInfo) => {
  * @returns The result of the user creation operation.
  */
 
-const signIn = async (info: UserInfo) => {
+const signIn = async (info: IUserInfo) => {
   const { email, password } = info;
 
   try {
