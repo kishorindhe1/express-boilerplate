@@ -1,6 +1,6 @@
 import compression from 'compression';
 import express from 'express';
-import apiRoutes from './src/api/index';
+import apiRoutes from './src/api';
 import { ENV } from './src/config';
 
 import {
