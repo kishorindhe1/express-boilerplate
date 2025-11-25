@@ -1,5 +1,5 @@
-import { handlePrismaError } from '../../../middleware/PrismaError';
-import { prisma } from '../../../utils';
+import { prismaErrorHandler } from '@/middleware';
+import { prisma } from '@/utils';
 
 /**
  * DbService provides database operations related to user authentication.
@@ -19,7 +19,7 @@ export const userRepository = {
         data: { name, email, password },
       });
     } catch (error) {
-      throw handlePrismaError(error);
+      throw prismaErrorHandler(error);
     }
   },
   /**
@@ -40,7 +40,7 @@ export const userRepository = {
         },
       });
     } catch (error) {
-      throw handlePrismaError(error);
+      throw prismaErrorHandler(error);
     }
   },
 };

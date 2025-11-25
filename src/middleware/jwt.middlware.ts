@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { ENV } from '../config/env';
+import { ENV } from '../config/env.config';
 
 // Define a custom interface for the JWT payload
 interface JwtPayload {

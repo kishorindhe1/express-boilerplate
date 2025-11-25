@@ -1,12 +1,12 @@
-import { Response } from "express";
+import { Response } from 'express';
 
- const sendResponse = (
+export const sendResponse = (
   res: Response,
   status: number,
   message: string,
   data: any = null,
   success: boolean = true,
-  details: any = null
+  details: any = null,
 ) => {
   return res.status(status).json({
     success,
@@ -16,4 +16,3 @@ import { Response } from "express";
     details,
   });
 };
-export default sendResponse;

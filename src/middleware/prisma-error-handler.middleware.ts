@@ -1,6 +1,6 @@
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import httpStatus from 'http-status';
-import ApiError from './ApiError';
+import ApiError from './api-error.middleware';
 
 export const handlePrismaError = (error: any) => {
   if (error instanceof PrismaClientKnownRequestError) {

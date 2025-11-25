@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
-import { ENV } from '../config/env';
+import { ENV } from '../config/env.config';
 
-const redis = new Redis({
+export const redis = new Redis({
   host: ENV.redis.host, // or "host.docker.internal" if running in Docker on Mac
   port: ENV.redis.port,
   username: ENV.redis.username, // only if you enabled ACL
@@ -15,5 +15,3 @@ redis.on('connect', () => {
 redis.on('error', (err) => {
   console.error('❌ Redis connection error:', err);
 });
-
-export default redis;
