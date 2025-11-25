@@ -1,6 +1,6 @@
 import { Response } from 'express';
 
-const sendResponse = (
+export const sendResponse = (
   res: Response,
   status: number,
   message: string,
@@ -16,4 +16,3 @@ const sendResponse = (
     details,
   });
 };
-export default sendResponse;
