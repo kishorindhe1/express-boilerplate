@@ -1,13 +1,21 @@
 import { Response } from 'express';
 
-export const sendResponse = (
+interface ApiResponse<T = unknown> {
+  success: boolean;
+  status: number;
+  message: string;
+  data?: T;
+  details?: unknown;
+}
+
+export const sendResponse = <T = unknown>(
   res: Response,
   status: number,
   message: string,
-  data: any = null,
+  data?: T,
   success: boolean = true,
-  details: any = null,
-) => {
+  details?: unknown,
+): Response<ApiResponse<T>> => {
   return res.status(status).json({
     success,
     status,

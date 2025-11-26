@@ -1,5 +1,6 @@
 import Redis from 'ioredis';
 import { ENV } from '../config/env.config';
+import logger from './logger.utiils';
 
 export const redis = new Redis({
   host: ENV.redis.host, // or "host.docker.internal" if running in Docker on Mac
@@ -9,9 +10,9 @@ export const redis = new Redis({
 });
 
 redis.on('connect', () => {
-  console.log('✅ Redis connected');
+  logger.info('✅ Redis connected');
 });
 
 redis.on('error', (err) => {
-  console.error('❌ Redis connection error:', err);
+  logger.error('❌ Redis connection error:', err);
 });

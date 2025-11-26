@@ -1,19 +1,15 @@
-import { NextFunction, Request, Response } from 'express';
+import logger from '@/utils/logger.utiils';
+import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { ZodError } from 'zod';
-import { logger, sendResponse } from '../utils';
+import { sendResponse } from '../utils';
 import ApiError from './api-error.middleware';
 
-const errorHandler = (
-  err: Error | ApiError | ZodError,
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+const errorHandler = (err: Error | ApiError | ZodError, req: Request, res: Response) => {
   let status: number = httpStatus.INTERNAL_SERVER_ERROR;
   let message: string = err.message || (httpStatus[status as keyof typeof httpStatus] as string);
 
-  let details: any;
+  let details: unknown;
 
   if (err instanceof ApiError) {
     status = err.status;
@@ -29,7 +25,7 @@ const errorHandler = (
   }
 
   if (process.env.NODE_ENV !== 'production') {
-    console.error('Error stack:', err.stack);
+    logger.error('Error stack:', err.stack);
   }
 
   // Log error details with stack

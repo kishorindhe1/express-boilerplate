@@ -1,4 +1,4 @@
-import { generateTokens } from '@/middleware/jwt.middlware';
+import { generateTokens } from '@/middleware';
 import { comparePassword, hashPassword } from '../../../utils';
 import { userRepository } from './auth.repository';
 import { IUserInfo } from './auth.types';
@@ -24,26 +24,22 @@ const addUser = async (info: IUserInfo) => {
 const signIn = async (info: IUserInfo) => {
   const { email, password } = info;
 
-  try {
-    // get user by email
-    const result = await userRepository.signInUser(email);
+  // get user by email
+  const result = await userRepository.signInUser(email);
 
-    if (!result) {
-      throw new Error('Invalid credentials');
-    }
-
-    // compare password
-    if (!comparePassword(password, result.password)) {
-      throw new Error('Invalid credentials');
-    }
-    const token = generateTokens({ userId: result.id, email: result.email });
-    // strip password before returning
-    const { password: _, ...safeUser } = result;
-
-    return { ...safeUser, ...token };
-  } catch (error) {
-    throw error;
+  if (!result) {
+    throw new Error('Invalid credentials');
   }
+
+  // compare password
+  if (!comparePassword(password, result.password)) {
+    throw new Error('Invalid credentials');
+  }
+  const token = generateTokens({ userId: result.id, email: result.email });
+  // strip password before returning
+  const { password: _, ...safeUser } = result;
+
+  return { ...safeUser, ...token };
 };
 
 export const authService = {

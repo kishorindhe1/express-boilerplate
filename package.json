@@ -1,6 +1,7 @@
 {
   "name": "express-api",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "build": "cross-env NODE_ENV=production tsc",
@@ -8,15 +9,25 @@
     "migrate:dev": "cross-env NODE_ENV=development prisma migrate dev",
     "migrate:prod": "cross-env NODE_ENV=production prisma migrate deploy",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "prepare": "husky",
-    "clean": "rm -rf dist && tsc-alias -p tsconfig.json"
+    "lint-staged": "lint-staged",
+    "prepare": "simple-git-hooks",
+    "clean": "rm -rf dist && tsc-alias -p tsconfig.json",
+    "test": "echo \"No tests yet\" && exit 0",
+    "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "src/**/*.{ts,js,json,md}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{ts,tsx}": [
+      "eslint --fix --cache",
+      "prettier --write --cache"
+    ],
+    "*.{js,json,md,yml,yaml,css,scss,html}": "prettier --write --cache"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint --edit $1",
+    "pre-push": "npm run type-check"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
@@ -43,6 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.39.1",
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^4.17.21",
@@ -51,30 +63,22 @@
     "@types/node": "^20.19.11",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.6",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
     "commitizen": "^4.3.1",
     "concurrently": "^9.2.1",
     "cross-env": "^10.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.5",
+    "lint-staged": "^16.2.7",
     "nodemon": "^3.0.3",
     "prettier": "^3.6.2",
     "prisma": "^5.19.1",
+    "simple-git-hooks": "^2.13.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsc-alias": "^1.8.16",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.48.0"
   }
 }

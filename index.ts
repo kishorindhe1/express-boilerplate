@@ -10,6 +10,7 @@ import {
   requestLogger,
   securityMiddleware,
 } from './src/middleware';
+import logger from './src/utils/logger.utiils';
 const app = express();
 
 app.use(express.json());
@@ -30,10 +31,10 @@ app.use(errorHandler);
 // Start server
 const PORT = ENV.PORT || 3000;
 const server = app.listen(PORT, () => {
-  console.log(`Running on ${PORT}`);
+  logger.info(`Running on ${PORT}`);
 });
 
 process.on('SIGTERM', () => {
-  console.log('Shutting down gracefully...');
+  logger.info('Shutting down gracefully...');
   server.close(() => process.exit(0));
 });

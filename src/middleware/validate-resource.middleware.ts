@@ -10,7 +10,7 @@ const validateResource =
         params: req.params,
       });
       next();
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Pass error to global error handler
       next(err);
     }
