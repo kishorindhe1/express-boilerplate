@@ -4,33 +4,17 @@
 .
 ├── .env
 ├── .env.prod
+├── .eslintcache
 ├── .husky
-├── ├── _
-├── ├── ├── applypatch-msg
-├── ├── ├── commit-msg
-├── ├── ├── h
-├── ├── ├── husky.sh
-├── ├── ├── post-applypatch
-├── ├── ├── post-checkout
-├── ├── ├── post-commit
-├── ├── ├── post-merge
-├── ├── ├── post-rewrite
-├── ├── ├── pre-applypatch
-├── ├── ├── pre-auto-gc
-├── ├── ├── pre-commit
-├── ├── ├── pre-merge-commit
-├── ├── ├── pre-push
-├── ├── ├── pre-rebase
-├── ├── ├── prepare-commit-msg
-├── ├── pre-commit
 ├── .prettierrc
+├── .simple-git-hooks.js
 ├── .vscode
 ├── ├── settings.json
 ├── Dockerfile
 ├── README.md
 ├── STRUCTURE.md
 ├── bun.lock
-├── commitlint.config.cjs
+├── commitlint.config.js
 ├── eslint.config.js
 ├── index.ts
 ├── logs
@@ -59,10 +43,10 @@
 ├── ├── ├── ├── ├── auth.types.ts
 ├── ├── ├── ├── ├── auth.validator.ts
 ├── ├── ├── ├── routes.ts
-├── ├── configs
+├── ├── config
 ├── ├── ├── env.config.ts
 ├── ├── ├── index.ts
-├── ├── middlewares
+├── ├── middleware
 ├── ├── ├── api-error.middleware.ts
 ├── ├── ├── error-handler.middleware.ts
 ├── ├── ├── index.ts
@@ -72,7 +56,7 @@
 ├── ├── ├── rate-limiter.ts
 ├── ├── ├── request-logger.middleware.ts
 ├── ├── ├── security.middleware.ts
-├── ├── ├── validate-resourse.middleware.ts
+├── ├── ├── validate-resource.middleware.ts
 ├── ├── utils
 ├── ├── ├── index.ts
 ├── ├── ├── logger.utils.ts
@@ -83,4 +67,4 @@
 ├── tsconfig.json
 ```
 
-Generated on Wed Nov 26 12:40:32 IST 2025
+Generated on Wed Nov 26 13:11:46 IST 2025
