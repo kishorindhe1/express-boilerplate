@@ -4,29 +4,50 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import xss from 'xss';
 
-const sanitize = (value: any): any => {
-  if (typeof value === 'string') return xss(value);
-  if (Array.isArray(value)) return value.map(sanitize);
-  if (value && typeof value === 'object') {
-    const cleaned: any = {};
-    for (const key in value) {
-      cleaned[key] = sanitize(value[key]);
-    }
-    return cleaned;
+const deepSanitize = (input: unknown): unknown => {
+  if (typeof input === 'string') {
+    return xss(input);
   }
-  return value;
+
+  if (Array.isArray(input)) {
+    return input.map(deepSanitize);
+  }
+
+  if (input && typeof input === 'object') {
+    const result: Record<string, unknown> = {};
+
+    // Safe iteration over object keys without 'any'
+    for (const key of Object.keys(input)) {
+      result[key] = deepSanitize(
+        // TypeScript knows input is object here, but we narrow it safely
+        (input as Record<string, unknown>)[key],
+      );
+    }
+
+    return result;
+  }
+
+  return input;
+};
+
+// No 'any' anywhere – fully typed middleware
+const xssCleanMiddleware = (_req: Request, _res: Response, next: NextFunction) => {
+  const req = _req as unknown as {
+    body: unknown;
+    query: unknown;
+    params: unknown;
+  };
+
+  req.body = deepSanitize(req.body);
+  req.query = deepSanitize(req.query);
+  req.params = deepSanitize(req.params);
+
+  next();
 };
 
 export const securityMiddleware = [
-  helmet({
-    contentSecurityPolicy: false,
-  }),
-  cors(), // configure allowlist in production
-  hpp(), // Parameter pollution block
-  (req: Request, _res: Response, next: NextFunction) => {
-    req.body = sanitize(req.body);
-    req.query = sanitize(req.query);
-    req.params = sanitize(req.params);
-    next();
-  },
+  helmet({ contentSecurityPolicy: false }),
+  cors(),
+  hpp(),
+  xssCleanMiddleware,
 ];

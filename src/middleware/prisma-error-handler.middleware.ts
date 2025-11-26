@@ -2,7 +2,7 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import httpStatus from 'http-status';
 import ApiError from './api-error.middleware';
 
-export const handlePrismaError = (error: any) => {
+export const handlePrismaError = (error: unknown) => {
   if (error instanceof PrismaClientKnownRequestError) {
     switch (error.code) {
       case 'P2002': // Unique constraint

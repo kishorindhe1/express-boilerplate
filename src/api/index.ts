@@ -1,5 +1,6 @@
 import express from 'express';
 import v1Routes from './v1.0/routes';
+import logger from '@/utils/logger.utiils';
 // Create a new router instance
 const router = express.Router();
 
@@ -7,5 +8,5 @@ const router = express.Router();
 // Add your route handlers or import them here
 // Example: router.use('/api', apiRoutes);
 router.use('/v1.0', v1Routes);
-console.log('API Routes Initialized');
+logger.info('API Routes Initialized');
 export default router;
