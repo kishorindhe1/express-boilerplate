@@ -1,4 +1,4 @@
-import { generateTokens } from '@/middleware/jwt.middlware';
+import { generateTokens } from '@/middleware';
 import { comparePassword, hashPassword } from '../../../utils';
 import { userRepository } from './auth.repository';
 import { IUserInfo } from './auth.types';
