@@ -338,3 +338,93 @@
 [2025-12-01 16:20:37] INFO: ✅ Redis connected
 [2025-12-01 16:20:37] ERROR: PostgreSQL connected successfully
 [2025-12-01 16:20:37] ERROR: Tables synced
+[2025-12-01 16:24:01] INFO: API Routes Initialized
+[2025-12-01 16:24:01] INFO: Running on 4000
+[2025-12-01 16:24:01] INFO: ✅ Redis connected
+[2025-12-01 16:24:01] ERROR: PostgreSQL connected successfully
+[2025-12-01 16:24:01] ERROR: Tables synced
+[2025-12-01 16:24:43] INFO: POST /api/v1.0/auth/register | Status: 500 | 244ms
+[2025-12-01 17:02:32] INFO: POST /api/v1.0/auth/register | Status: 201 | 240ms
+[2025-12-01 17:02:57] INFO: POST /api/v1.0/auth/register | Status: 500 | 241ms
+[2025-12-01 17:12:34] INFO: Shutting down gracefully...
+[2025-12-01 17:12:34] INFO: API Routes Initialized
+[2025-12-01 17:12:34] INFO: Running on 4000
+[2025-12-01 17:12:34] INFO: ✅ Redis connected
+[2025-12-01 17:12:34] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:12:34] ERROR: Tables synced
+[2025-12-01 17:14:36] INFO: Shutting down gracefully...
+[2025-12-01 17:14:37] INFO: API Routes Initialized
+[2025-12-01 17:14:37] INFO: Running on 4000
+[2025-12-01 17:14:37] INFO: ✅ Redis connected
+[2025-12-01 17:14:37] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:14:37] ERROR: Tables synced
+[2025-12-01 17:14:37] INFO: Shutting down gracefully...
+[2025-12-01 17:14:37] INFO: API Routes Initialized
+[2025-12-01 17:14:37] INFO: Running on 4000
+[2025-12-01 17:14:37] INFO: ✅ Redis connected
+[2025-12-01 17:14:37] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:14:37] ERROR: Tables synced
+[2025-12-01 17:14:56] INFO: Shutting down gracefully...
+[2025-12-01 17:14:57] INFO: API Routes Initialized
+[2025-12-01 17:14:57] INFO: Running on 4000
+[2025-12-01 17:14:57] INFO: ✅ Redis connected
+[2025-12-01 17:14:57] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:14:57] ERROR: Tables synced
+[2025-12-01 17:15:12] INFO: Shutting down gracefully...
+[2025-12-01 17:15:13] INFO: API Routes Initialized
+[2025-12-01 17:15:13] INFO: Running on 4000
+[2025-12-01 17:15:13] INFO: ✅ Redis connected
+[2025-12-01 17:15:13] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:15:13] ERROR: Tables synced
+[2025-12-01 17:15:17] INFO: Shutting down gracefully...
+[2025-12-01 17:15:17] INFO: API Routes Initialized
+[2025-12-01 17:15:17] INFO: Running on 4000
+[2025-12-01 17:15:17] INFO: ✅ Redis connected
+[2025-12-01 17:15:17] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:15:17] ERROR: Tables synced
+[2025-12-01 17:15:18] INFO: Shutting down gracefully...
+[2025-12-01 17:15:18] INFO: API Routes Initialized
+[2025-12-01 17:15:18] INFO: Running on 4000
+[2025-12-01 17:15:18] INFO: ✅ Redis connected
+[2025-12-01 17:15:18] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:15:18] ERROR: Tables synced
+[2025-12-01 17:16:54] INFO: Shutting down gracefully...
+[2025-12-01 17:16:54] INFO: API Routes Initialized
+[2025-12-01 17:16:54] INFO: Running on 4000
+[2025-12-01 17:16:54] INFO: ✅ Redis connected
+[2025-12-01 17:16:54] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:16:54] ERROR: Tables synced
+[2025-12-01 17:16:58] INFO: POST /api/v1.0/auth/register | Status: 500 | 241ms
+[2025-12-01 17:17:19] INFO: Shutting down gracefully...
+[2025-12-01 17:17:19] INFO: API Routes Initialized
+[2025-12-01 17:17:19] INFO: Running on 4000
+[2025-12-01 17:17:19] INFO: ✅ Redis connected
+[2025-12-01 17:17:19] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:17:19] ERROR: Tables synced
+[2025-12-01 17:17:21] INFO: POST /api/v1.0/auth/register | Status: 500 | 236ms
+[2025-12-01 17:18:30] INFO: Shutting down gracefully...
+[2025-12-01 17:18:30] INFO: ✅ Redis connected
+[2025-12-01 17:18:46] INFO: ✅ Redis connected
+[2025-12-01 17:18:55] INFO: API Routes Initialized
+[2025-12-01 17:18:55] INFO: Running on 4000
+[2025-12-01 17:18:55] INFO: ✅ Redis connected
+[2025-12-01 17:18:55] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:18:55] ERROR: Tables synced
+[2025-12-01 17:18:56] INFO: Shutting down gracefully...
+[2025-12-01 17:18:56] INFO: API Routes Initialized
+[2025-12-01 17:18:56] INFO: Running on 4000
+[2025-12-01 17:18:56] INFO: ✅ Redis connected
+[2025-12-01 17:18:56] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:18:56] ERROR: Tables synced
+[2025-12-01 17:18:59] INFO: POST /api/v1.0/auth/register | Status: 201 | 238ms
+[2025-12-01 17:21:08] INFO: Shutting down gracefully...
+[2025-12-01 17:21:08] INFO: ✅ Redis connected
+[2025-12-01 17:22:10] INFO: ✅ Redis connected
+[2025-12-01 17:22:30] INFO: ✅ Redis connected
+[2025-12-01 17:22:40] INFO: ✅ Redis connected
+[2025-12-01 17:22:55] INFO: API Routes Initialized
+[2025-12-01 17:22:55] INFO: Running on 4000
+[2025-12-01 17:22:55] INFO: ✅ Redis connected
+[2025-12-01 17:22:55] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:22:55] ERROR: Tables synced
+[2025-12-01 17:22:58] INFO: POST /api/v1.0/auth/register | Status: 409 | 241ms
