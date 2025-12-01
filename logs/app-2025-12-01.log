@@ -428,3 +428,66 @@
 [2025-12-01 17:22:55] ERROR: PostgreSQL connected successfully
 [2025-12-01 17:22:55] ERROR: Tables synced
 [2025-12-01 17:22:58] INFO: POST /api/v1.0/auth/register | Status: 409 | 241ms
+[2025-12-01 17:34:00] INFO: Shutting down gracefully...
+[2025-12-01 17:34:00] INFO: API Routes Initialized
+[2025-12-01 17:34:00] INFO: Running on 4000
+[2025-12-01 17:34:00] INFO: ✅ Redis connected
+[2025-12-01 17:34:00] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:00] ERROR: Tables synced
+[2025-12-01 17:34:05] INFO: Shutting down gracefully...
+[2025-12-01 17:34:05] INFO: API Routes Initialized
+[2025-12-01 17:34:05] INFO: Running on 4000
+[2025-12-01 17:34:05] INFO: ✅ Redis connected
+[2025-12-01 17:34:05] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:05] ERROR: Tables synced
+[2025-12-01 17:34:05] INFO: Shutting down gracefully...
+[2025-12-01 17:34:05] INFO: API Routes Initialized
+[2025-12-01 17:34:05] INFO: Running on 4000
+[2025-12-01 17:34:05] INFO: ✅ Redis connected
+[2025-12-01 17:34:05] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:05] ERROR: Tables synced
+[2025-12-01 17:34:05] INFO: Shutting down gracefully...
+[2025-12-01 17:34:05] INFO: API Routes Initialized
+[2025-12-01 17:34:05] INFO: Running on 4000
+[2025-12-01 17:34:05] INFO: ✅ Redis connected
+[2025-12-01 17:34:05] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:05] ERROR: Tables synced
+[2025-12-01 17:34:05] INFO: Shutting down gracefully...
+[2025-12-01 17:34:05] INFO: API Routes Initialized
+[2025-12-01 17:34:05] INFO: Running on 4000
+[2025-12-01 17:34:05] INFO: ✅ Redis connected
+[2025-12-01 17:34:05] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:05] ERROR: Tables synced
+[2025-12-01 17:34:10] ERROR: Error stack:
+[2025-12-01 17:34:10] ERROR: Error: Duplicate value: email | Status: 409 | Stack: Error: Duplicate value: email
+    at handleSequelizeError (/Users/kishor/code/express-boilerplate/src/middleware/sequelize-error-handler.middleware.ts:24:12)
+    at handleControllerError (/Users/kishor/code/express-boilerplate/src/utils/controller-error-handler.utils.ts:9:46)
+    at /Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:11:33
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-12-01 17:34:10] INFO: POST /api/v1.0/auth/register | Status: 409 | 242ms
+[2025-12-01 17:34:51] INFO: Shutting down gracefully...
+[2025-12-01 17:34:51] INFO: API Routes Initialized
+[2025-12-01 17:34:51] INFO: Running on 4000
+[2025-12-01 17:34:51] INFO: ✅ Redis connected
+[2025-12-01 17:34:51] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:34:51] ERROR: Tables synced
+[2025-12-01 17:34:54] ERROR: Error stack:
+[2025-12-01 17:34:54] ERROR: Error: Duplicate value: email | Status: 409 | Stack: Error: Duplicate value: email
+    at handleSequelizeError (/Users/kishor/code/express-boilerplate/src/middleware/sequelize-error-handler.middleware.ts:24:12)
+    at handleControllerError (/Users/kishor/code/express-boilerplate/src/utils/controller-error-handler.utils.ts:9:46)
+    at /Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:11:33
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-12-01 17:34:54] INFO: POST /api/v1.0/auth/register | Status: 409 | 238ms
+[2025-12-01 17:34:55] ERROR: Error stack:
+[2025-12-01 17:34:55] ERROR: Error: Duplicate value: email | Status: 409 | Stack: Error: Duplicate value: email
+    at handleSequelizeError (/Users/kishor/code/express-boilerplate/src/middleware/sequelize-error-handler.middleware.ts:24:12)
+    at handleControllerError (/Users/kishor/code/express-boilerplate/src/utils/controller-error-handler.utils.ts:9:46)
+    at /Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:11:33
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-12-01 17:34:55] INFO: POST /api/v1.0/auth/register | Status: 409 | 228ms

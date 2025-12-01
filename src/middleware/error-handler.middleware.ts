@@ -1,11 +1,16 @@
 import { logger } from '@/utils';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { ZodError } from 'zod';
 import { sendResponse } from '../utils';
 import { ApiError } from './api-error.middleware';
 
-export const errorHandler = (err: Error | ApiError | ZodError, req: Request, res: Response) => {
+export const errorHandler = (
+  err: Error | ApiError | ZodError,
+  req: Request,
+  res: Response,
+  _: NextFunction, // <-- REQUIRED
+) => {
   let status: number = httpStatus.INTERNAL_SERVER_ERROR;
   let message: string = err.message || (httpStatus[status as keyof typeof httpStatus] as string);
 
