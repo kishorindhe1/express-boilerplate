@@ -10,18 +10,21 @@ import {
   requestLogger,
   securityMiddleware,
 } from './middleware';
-import { logger } from './utils';
+import { connectDB, logger } from './utils';
 const app = express();
 
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
+connectDB();
 app.use(generalLimiter);
 app.use(securityMiddleware);
 app.use(compression());
 app.use(requestLogger);
 // API routes
 app.use('/api', apiRoutes);
-
+app.get('/', (_, res) => {
+  res.send('Server is running...');
+});
 // Not found handler
 app.use(notFoundHandler);
 
