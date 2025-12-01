@@ -1,7 +1,7 @@
 import compression from 'compression';
 import express from 'express';
-import apiRoutes from './src/api';
-import { ENV } from './src/config';
+import apiRoutes from './api';
+import { ENV } from './config';
 
 import {
   errorHandler,
@@ -9,8 +9,8 @@ import {
   notFoundHandler,
   requestLogger,
   securityMiddleware,
-} from './src/middleware';
-import { logger } from './src/utils/logger.utils';
+} from './middleware';
+import { logger } from './utils';
 const app = express();
 
 app.use(express.json());

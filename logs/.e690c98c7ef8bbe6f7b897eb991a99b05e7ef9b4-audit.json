@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/kishor/code/express-boilerplate/logs/.e690c98c7ef8bbe6f7b897eb991a99b05e7ef9b4-audit.json",
+    "files": [
+        {
+            "date": 1764567234130,
+            "name": "/Users/kishor/code/express-boilerplate/logs/app-2025-12-01.log",
+            "hash": "97d2d3debb4107fd947e694db97343590cc8dd5588f8318bbf36907a882a2ba2"
+        }
+    ],
+    "hashType": "sha256"
+}

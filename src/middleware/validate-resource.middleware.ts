@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { AnyZodObject } from 'zod';
 
-const validateResource =
+export const validateResource =
   (schema: AnyZodObject) => (req: Request, res: Response, next: NextFunction) => {
     try {
       schema.parse({
@@ -15,5 +15,3 @@ const validateResource =
       next(err);
     }
   };
-
-export default validateResource;

@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/register', validateResource(createUserSchema), authController.addUser);
 router.post('/sign-in', validateResource(singInSchema), authController.signIn);
 router.get('/profile', jwtMiddleware, (req, res) => {
-  redis.set('foo', 'bar');
+  // redis.set('foo', 'bar');
   res.send('profile route');
 });
 export default router;
