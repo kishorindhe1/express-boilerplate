@@ -5,7 +5,6 @@ import { ApiError } from '@/middleware';
 
 export const handleControllerError = (err: unknown, next: NextFunction) => {
   // Convert Sequelize-related errors
-  console.log('Handling controller error:', err);
   const processedError = handleSequelizeError(err);
 
   if (processedError instanceof ApiError) {

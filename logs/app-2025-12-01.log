@@ -491,3 +491,15 @@
     at rejected (/Users/kishor/code/express-boilerplate/src/api/v1.0/auth/auth.controller.ts:6:65)
     at processTicksAndRejections (node:internal/process/task_queues:105:5)
 [2025-12-01 17:34:55] INFO: POST /api/v1.0/auth/register | Status: 409 | 228ms
+[2025-12-01 17:56:55] INFO: Shutting down gracefully...
+[2025-12-01 17:56:56] INFO: API Routes Initialized
+[2025-12-01 17:56:56] INFO: Running on 4000
+[2025-12-01 17:56:56] INFO: ✅ Redis connected
+[2025-12-01 17:56:56] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:56:56] ERROR: Tables synced
+[2025-12-01 17:56:58] INFO: Shutting down gracefully...
+[2025-12-01 17:56:58] INFO: API Routes Initialized
+[2025-12-01 17:56:58] INFO: Running on 4000
+[2025-12-01 17:56:58] INFO: ✅ Redis connected
+[2025-12-01 17:56:58] ERROR: PostgreSQL connected successfully
+[2025-12-01 17:56:58] ERROR: Tables synced
