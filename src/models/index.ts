@@ -1,2 +1,2 @@
-export * from './Post';
-export * from './User';
+export * from './post.model';
+export * from './user.model';
