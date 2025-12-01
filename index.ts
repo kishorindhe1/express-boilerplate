@@ -10,7 +10,7 @@ import {
   requestLogger,
   securityMiddleware,
 } from './src/middleware';
-import logger from './src/utils/logger.utiils';
+import { logger } from './src/utils/logger.utils';
 const app = express();
 
 app.use(express.json());

@@ -19,7 +19,7 @@ const dailyRotateFileTransport = new DailyRotateFile({
   maxFiles: '14d', // keep logs for 14 days
 });
 
-const logger = createLogger({
+export const logger = createLogger({
   level: 'info',
   format: format.combine(
     format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -34,5 +34,3 @@ const logger = createLogger({
     dailyRotateFileTransport,
   ],
 });
-
-export default logger;

@@ -1,4 +1,4 @@
-class ApiError extends Error {
+export class ApiError extends Error {
   status: number;
   details?: unknown;
 
@@ -9,5 +9,3 @@ class ApiError extends Error {
     Object.setPrototypeOf(this, ApiError.prototype);
   }
 }
-
-export default ApiError;
