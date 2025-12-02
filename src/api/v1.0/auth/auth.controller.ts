@@ -1,4 +1,4 @@
-import { sendResponse } from '@/utils';
+import { handleControllerError, sendResponse } from '@/utils';
 import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { authService } from './auth.service';
@@ -8,11 +8,7 @@ const addUser = async (req: Request, res: Response, next: NextFunction) => {
     const result = await authService.addUser(req.body);
     sendResponse(res, httpStatus.CREATED, 'User added successfully', result);
   } catch (err: unknown) {
-    if (err instanceof Error) {
-      next(err);
-    } else {
-      next(new Error('An unknown error occurred'));
-    }
+    return handleControllerError(err, next);
   }
 };
 const signIn = async (req: Request, res: Response, next: NextFunction) => {
@@ -20,11 +16,7 @@ const signIn = async (req: Request, res: Response, next: NextFunction) => {
     const result = await authService.signIn(req.body);
     sendResponse(res, httpStatus.OK, 'Login successfully', result);
   } catch (err: unknown) {
-    if (err instanceof Error) {
-      next(err);
-    } else {
-      next(new Error('An unknown error occurred'));
-    }
+    return handleControllerError(err, next);
   }
 };
 export const authController = {

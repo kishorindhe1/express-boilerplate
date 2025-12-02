@@ -23,7 +23,7 @@ const accessTokenExpiry = '15m'; // Short-lived access token
 const refreshTokenExpiry = '7d'; // Longer-lived refresh token
 
 // Middleware for JWT access and refresh token handling
-const jwtMiddleware = async (req: AuthRequest, res: Response, next: NextFunction) => {
+export const jwtMiddleware = async (req: AuthRequest, res: Response, next: NextFunction) => {
   // Get the access token from the Authorization header
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -93,5 +93,3 @@ export const generateTokens = (payload: JwtPayload) => {
 export const revokeRefreshToken = (refreshToken: string) => {
   refreshTokenStore.delete(refreshToken);
 };
-
-export default jwtMiddleware;

@@ -1,6 +1,6 @@
 import express from 'express';
 import v1Routes from './v1.0/routes';
-import logger from '@/utils/logger.utiils';
+import { logger } from '@/utils';
 // Create a new router instance
 const router = express.Router();
 

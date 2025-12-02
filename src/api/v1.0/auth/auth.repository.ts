@@ -1,46 +1,47 @@
-import { prismaErrorHandler } from '@/middleware';
-import { prisma } from '@/utils';
+// repositories/userRepository.ts
+import { User } from '@/models'; // the model we fixed earlier
 
-/**
- * DbService provides database operations related to user authentication.
- * @property createUser - Creates a new user with the given name, email, and password.
- */
 export const userRepository = {
   /**
-   * Creates a new user in the database.
-   * @param name - The name of the user.
-   * @param email - The email address of the user.
-   * @param password - The password for the user.
-   * @returns The created user record.
+   * Creates a new user in the database (securely with hashed password)
    */
   async addUser(name: string, email: string, password: string) {
-    try {
-      return await prisma.user.create({
-        data: { name, email, password },
-      });
-    } catch (error) {
-      throw prismaErrorHandler(error);
-    }
+    const user = new User({
+      name,
+      email: email.toLowerCase().trim(),
+    });
+
+    await user.setPassword(password); // bcrypt hash
+    await user.save();
+
+    // Return safe data — NEVER return passwordHash
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      createdAt: user.createdAt,
+    };
   },
+
   /**
-   * Get user in the database.
-   * @param email - The email address of the user.
-   * @returns The created user record.
+   * Get user by email for sign-in (returns passwordHash for comparison)
    */
   async signInUser(email: string) {
-    try {
-      return await prisma.user.findUnique({
-        where: { email },
-        select: {
-          id: true,
-          name: true,
-          email: true,
-          password: true,
-          createdAt: true,
-        },
-      });
-    } catch (error) {
-      throw prismaErrorHandler(error);
+    const user = await User.findOne({
+      where: { email: email.toLowerCase().trim() },
+      attributes: ['id', 'name', 'email', 'passwordHash', 'createdAt'],
+    });
+
+    if (!user) {
+      return null; // Important: don't say "user not found" for security
     }
+
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      passwordHash: user.passwordHash, // needed for comparison in service layer
+      createdAt: user.createdAt,
+    };
   },
 };

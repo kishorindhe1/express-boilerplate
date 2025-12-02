@@ -1,6 +1,6 @@
 import Redis from 'ioredis';
 import { ENV } from '../config/env.config';
-import logger from './logger.utiils';
+import { logger } from './';
 
 export const redis = new Redis({
   host: ENV.redis.host, // or "host.docker.internal" if running in Docker on Mac
