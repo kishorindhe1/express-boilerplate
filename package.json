@@ -5,8 +5,6 @@
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "build": "cross-env NODE_ENV=production tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
-    "migrate:dev": "cross-env NODE_ENV=development prisma migrate dev",
-    "migrate:prod": "cross-env NODE_ENV=production prisma migrate deploy",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
